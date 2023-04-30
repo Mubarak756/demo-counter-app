@@ -7,17 +7,16 @@ pipeline{
         stage('Git Checkout'){
             
             steps{
-                
-                script{
-                    
+                                
                     git branch: 'main', credentialsId: '1fcd2439-07b2-41b2-801a-66cc7c346402', url: 'https://github.com/Mubarak756/demo-counter-app.git'
                 }
             }
             
-            stage('Unit Testing'){
+        stage('Unit Testing'){
             
             steps{
-                sh "mvn test"
+			
+                sh 'mvn test'
            }      
         }
     }        
